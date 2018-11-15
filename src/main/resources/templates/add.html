@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/manager/add}" th:object="${staff}" method="post">
+    <label for="id">Staff ID</label>
+    <input id="id" type="text" th:field="*{staffid}" />
+
+    <label for="name">Name</label>
+    <input id="name" type="text" th:field="*{namestaff}" />
+
+    <label for="group">Group</label>
+    <input id="group" type="text" th:field="*{groupstaff}" />
+
+    <label for="dob">DOB</label>
+    <input id="dob" type="text" th:field="*{dob}" />
+
+    <label for="sex">Sex</label>
+    <input id="sex" type="text" th:field="*{sex}" />
+
+    <label for="phone">Phone</label>
+    <input id="phone" type="text" th:field="*{phone}" />
+
+    <label for="identity">Identity</label>
+    <input id="identity" type="text" th:field="*{numidentity}" />
+
+    <label for="email">Email</label>
+    <input id="email" type="text" th:field="*{email}" />
+
+    <label for="addr">Address</label>
+    <input id="addr" type="text" th:field="*{address}" />
+
+    <input type="submit" value="add staff">
+</form>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

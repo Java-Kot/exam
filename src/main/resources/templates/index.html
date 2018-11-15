@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<th:block th:each="staffs : ${staff}">
+    <div class="anote col-md-3 col-sm-12">
+        <div>
+            <nav class="anote_head">
+                <span th:text="${staffs.id}" class="anote_id"></span>
+                <h1 th:text="${staffs.namestaff}" class="anote_title"></h1>
+                <a th:href="@{/manager/del/__${staffs.id}__}">Delete</a>
+                <span th:text="${staffs.email}"></span>
+                <span th:text="${staffs.numidentity}"></span>
+                <span th:text="${staffs.dob}"></span>
+                <span th:text="${staffs.groupstaff}"></span>
+                <span th:text="${staffs.staffid}"></span>
+                <span th:text="${staffs.address}"></span>
+                <span th:text="${staffs.phone}"></span>
+            </nav>
+        </div>
+    </div>
+</th:block>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
